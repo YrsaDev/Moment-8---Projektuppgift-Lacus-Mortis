@@ -4,6 +4,7 @@
  * Namn: Jeanette Räisänen
  */
 
+// Funktion för att öppna och stänga menyn när hamburgermenyn klickas
 const menuBtn = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 

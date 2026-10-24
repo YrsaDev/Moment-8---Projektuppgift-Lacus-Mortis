@@ -16,9 +16,25 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
+    display: flex; /* Flex-container för att placera ikoner */
+    justify-content: flex-end; /* Lägger ikonen till höger */
+    position: relative; /* Referenspunkt för hamburgermenyn */
+    align-items: center; /* Vertikal centrering av innehållet */
+}
+
+.headerlogo {
+width: 250px;
+height: auto;
+margin-right: auto;
+margin-top: 3px;
+padding-left: 5px;
+}
+
+.login-icon {
+    width: 50px;
+    height: auto;
+    vertical-align: middle; /* Justerar ikonen vertikalt med texten */
+    margin-right: 20px;
 }
 
 /* Navigation */
@@ -38,16 +54,17 @@ header {
     display: block;
 }
 
+/* Hamburgerikon */
 .menu-toggle {
-margin-right: 1rem;
-margin-top: 1rem;
-cursor: pointer;
-background-color: transparent;
-border: none;
-color:#B8DFFF;
-font-size: 2rem;
+    margin-right: 0.7rem;
+    margin-top: 0.45rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #B8DFFF;
+    font-size: 2rem;
 }
-
+/* Lista och länkar för navigering */
 .menu ul {
     list-style: none;
     padding: 0;
@@ -71,10 +88,12 @@ h1 {
     .menu-toggle {
         display: none;
     }
+
     .menu {
         display: block;
         width: auto;
     }
+
     .menu ul {
         display: flex;
         gap: 2rem;
