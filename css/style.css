@@ -1,0 +1,82 @@
+/* Grundläggande styling */
+body {
+    min-height: 100dvh;
+    background-color: #050D16;
+    margin: 0;
+    padding: 0;
+    font-family: 'inter', sans-serif;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    background-image: url('../images/background_mobile.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+/* Navigation */
+.menu {
+    display: none;
+    width: max-content;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background-color: #050D16B3;
+    padding: 12px;
+    line-height: 1.9;
+}
+
+/*Visar meny när klassen open läggs till*/
+.menu.open {
+    display: block;
+}
+
+.menu-toggle {
+margin-right: 1rem;
+margin-top: 1rem;
+cursor: pointer;
+background-color: transparent;
+border: none;
+color:#B8DFFF;
+font-size: 2rem;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h1 {
+    margin: 0;
+}
+
+/*Desktop skärmar*/
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    .menu {
+        display: block;
+        width: auto;
+    }
+    .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+}
