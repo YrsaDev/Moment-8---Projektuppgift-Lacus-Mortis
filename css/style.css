@@ -126,11 +126,36 @@ h1 {
     margin-top: 2rem;
 }
 
-/* För responsivitet, så att deras position bevaras */
+/* För responsivitet, så att deras position bevaras och hovereffekt */
 .mainlinks img {
     width: 99%;
     height: auto;
 }
+
+.mainlinks a {
+    display: block;
+}
+
+.mainlinks a img {
+    display: block;
+    transition: filter 0.3s ease, transform 0.15s ease;
+}
+
+.mainlinks a:hover img {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 100, 0.8));
+}
+
+.mainlinks a:active img {
+    transform: scale(0.98);
+}
+/* Ger hovereffekt med tangentbordsnavigering */
+.mainlinks a:focus-visible {
+    outline: none;
+}
+
+.mainlinks a:focus-visible img {
+    filter: drop-shadow(0 0 12px rgba(212, 175, 100, 0.9));
+}   
 
 /*Desktop skärmar*/
 @media (min-width: 768px) {
