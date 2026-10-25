@@ -1,6 +1,6 @@
 /* Grundläggande styling */
 body {
-    min-height: 100dvh;
+    min-height: 100vh;
     background-color: #050D16;
     margin: 0;
     padding: 0;
@@ -9,10 +9,26 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     font-weight: 400;
+}
+
+/* Fixerad bakgrund för mobil och desktop.
+   ::before skapar ett separat bakgrundslager.
+   position: fixed håller bakgrunden stilla vid scrollning.
+   100lvh förhindrar att bakgrunden zoomar när
+   mobilens adressfält visas eller döljs.
+*/
+body::before {
+    content: ""; /* Skapar ett tomt pseudo-element utan textinnehåll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100lvh;
     background-image: url('../images/background_mobile.webp');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    z-index: -1;
 }
 
 header {
@@ -23,23 +39,24 @@ header {
 }
 
 .headerlogo {
-width: 250px;
-height: auto;
-margin-right: auto;
-margin-top: 3px;
-padding-left: 5px;
+    max-width: 250px;
+    height: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    padding-left: 20px;
 }
 
 .login-icon {
     width: 50px;
     height: auto;
-    vertical-align: middle; /* Justerar ikonen vertikalt med texten */
+    vertical-align: middle;  /* Justerar ikonen vertikalt med texten */
     margin-right: 20px;
 }
 
 /* Navigation */
 .menu {
-    display: none;
+    z-index: 100;   /* Förebygger att något annat hamnar ovanför menyn */
+    display: none;  /* Håller menyn dold tills den aktiveras */
     width: max-content;
     position: absolute;
     top: 100%;
@@ -51,7 +68,7 @@ padding-left: 5px;
 
 /*Visar meny när klassen open läggs till*/
 .menu.open {
-    display: block;
+    display: block; 
 }
 
 /* Hamburgerikon */
@@ -64,6 +81,7 @@ padding-left: 5px;
     color: #B8DFFF;
     font-size: 2rem;
 }
+
 /* Lista och länkar för navigering */
 .menu ul {
     list-style: none;
@@ -81,6 +99,37 @@ padding-left: 5px;
 
 h1 {
     margin: 0;
+}
+/* Huvudinnehåll */
+.mainlogo {
+    display: block;
+    width: 250px;
+    max-width: 90%;
+    height: auto;
+    margin: 2rem auto 0;
+}
+
+.maintext {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainlinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/* För responsivitet, så att deras position bevaras */
+.mainlinks img {
+    width: 99%;
+    height: auto;
 }
 
 /*Desktop skärmar*/
