@@ -18,7 +18,8 @@ body {
    mobilens adressfält visas eller döljs.
 */
 body::before {
-    content: ""; /* Skapar ett tomt pseudo-element utan textinnehåll */
+    content: "";
+    /* Skapar ett tomt pseudo-element utan textinnehåll */
     position: fixed;
     top: 0;
     left: 0;
@@ -32,10 +33,14 @@ body::before {
 }
 
 header {
-    display: flex; /* Flex-container för att placera ikoner */
-    justify-content: flex-end; /* Lägger ikonen till höger */
-    position: relative; /* Referenspunkt för hamburgermenyn */
-    align-items: center; /* Vertikal centrering av innehållet */
+    display: flex;
+    /* Flex-container för att placera ikoner */
+    justify-content: flex-end;
+    /* Lägger ikonen till höger */
+    position: relative;
+    /* Referenspunkt för hamburgermenyn */
+    align-items: center;
+    /* Vertikal centrering av innehållet */
 }
 
 .headerlogo {
@@ -49,14 +54,17 @@ header {
 .login-icon {
     width: 50px;
     height: auto;
-    vertical-align: middle;  /* Justerar ikonen vertikalt med texten */
+    vertical-align: middle;
+    /* Justerar ikonen vertikalt med texten */
     margin-right: 20px;
 }
 
 /* Navigation */
 .menu {
-    z-index: 100;   /* Förebygger att något annat hamnar ovanför menyn */
-    display: none;  /* Håller menyn dold tills den aktiveras */
+    z-index: 100;
+    /* Förebygger att något annat hamnar ovanför menyn */
+    display: none;
+    /* Håller menyn dold tills den aktiveras */
     width: max-content;
     position: absolute;
     top: 100%;
@@ -68,7 +76,7 @@ header {
 
 /*Visar meny när klassen open läggs till*/
 .menu.open {
-    display: block; 
+    display: block;
 }
 
 /* Hamburgerikon */
@@ -100,6 +108,7 @@ header {
 h1 {
     margin: 0;
 }
+
 /* Huvudinnehåll */
 .mainlogo {
     display: block;
@@ -148,6 +157,7 @@ h1 {
 .mainlinks a:active img {
     transform: scale(0.98);
 }
+
 /* Ger hovereffekt med tangentbordsnavigering */
 .mainlinks a:focus-visible {
     outline: none;
@@ -155,7 +165,65 @@ h1 {
 
 .mainlinks a:focus-visible img {
     filter: drop-shadow(0 0 12px rgba(212, 175, 100, 0.9));
-}   
+}
+
+/* Info area under mainlinks*/
+.bottomsection {
+    background-image: url("../images/main_infoarea.webp");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    min-height: 150px;
+    width: 100%;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.researchlabel {
+    color: #d4af64;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.bottomtext {
+    padding: 1.5rem;
+    color: white;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.bottomtext h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 1rem 0 1.5rem;
+}
+
+.bottomtext p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Footer*/
+.footer {
+    background-color: #08131D;
+    height: 80px;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.footer p {
+    color: #d4af64;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding-top: 1rem;
+
+}
 
 /*Desktop skärmar*/
 @media (min-width: 768px) {
