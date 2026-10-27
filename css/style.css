@@ -25,7 +25,12 @@ body::before {
     left: 0;
     width: 100%;
     height: 100lvh;
-    background-image: url('../images/background_mobile.webp');
+    background-image:
+    linear-gradient(
+    rgba(120, 145, 165, 0.15),
+    rgba(120, 145, 165, 0.15)
+    ),
+    url('../images/background_desktop.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +45,7 @@ header {
     position: relative;
     /* Referenspunkt för hamburgermenyn */
     align-items: center;
-    /* Vertikal centrering av innehållet */
+    /* Styr placering vertikalt i flexbox */
 }
 
 .headerlogo {
@@ -52,7 +57,8 @@ header {
 }
 
 .headericonlogo {
-    display: none; /* Gör bilden osynlig */
+    display: none;
+    /* Gör bilden osynlig */
 }
 
 .login-icon {
@@ -114,6 +120,16 @@ h1 {
 }
 
 /* Huvudinnehåll */
+.maincoordinates {
+    display: none;
+    /* Gör bilden osynlig */
+}
+
+.mainherologo {
+    display: none;
+    /* Gör bilden osynlig */
+}
+
 .mainlogo {
     display: block;
     width: 250px;
@@ -137,6 +153,21 @@ h1 {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
+}
+
+.basestatus {
+    display: none;
+    /* Gör bilden osynlig */
+}
+
+.mainherolinks {
+    display: none;
+    /* Gör bilderna osynlig */
+}
+
+.herotext {
+    display: none;
+    /* Gör texten osynlig */
 }
 
 /* För responsivitet, så att deras position bevaras och hovereffekt */
@@ -173,7 +204,12 @@ h1 {
 
 /* Info area under mainlinks */
 .bottomsection {
-    background-image: url("../images/main_infoarea.webp");
+    background-image:
+    linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.45)
+    ),
+    url("../images/main_infoarea.webp");
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -195,7 +231,6 @@ h1 {
     padding: 1.5rem;
     color: white;
     text-align: left;
-    background: rgba(0, 0, 0, 0.45);
 }
 
 .bottomtext h2 {
@@ -231,8 +266,6 @@ h1 {
 
 /* Desktop skärmar */
 
-
-
 /* Header navigering */
 @media (min-width: 768px) {
     .menu-toggle {
@@ -240,7 +273,8 @@ h1 {
     }
 
     .menu {
-        display: block; /* Tar hela radens bredd */
+        display: block;
+        /* Tar hela radens bredd */
         width: auto;
         position: static;
         padding: 0;
@@ -253,13 +287,19 @@ h1 {
         gap: 2rem;
     }
 
+    .menu li:last-child {
+        margin-left: 160px;
+    }
+
     .menu a {
-        display: inline block; /* Länk får egen yta runt sig, tar inte hela raden */
+        display: inline block;
+        /* Länk får egen yta runt sig, tar inte hela raden */
         border-top: 2px solid transparent;
         padding-top: 8px;
     }
 
-    .menu a:hover {
+    /* Hover guldtak på alla länkar förutom sista */
+    .menu li:not(:last-child) a:hover {
         border-top-color: #d4af64;
     }
 
@@ -271,7 +311,12 @@ h1 {
         left: 0;
         width: 100%;
         height: 100lvh;
-        background-image: url('../images/background_desktop.webp');
+        background-image:
+        linear-gradient(
+        rgba(120, 145, 165, 0.15),
+        rgba(120, 145, 165, 0.15)
+        ),
+        url('../images/background_desktop.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -289,7 +334,8 @@ h1 {
     .headerlogo {
         max-width: none;
         width: 450px;
-        display: none;  /* Gör bilden osynlig */
+        display: none;
+        /* Gör bilden osynlig */
     }
 
     .headericonlogo {
@@ -303,11 +349,74 @@ h1 {
         width: 50px;
         height: auto;
         vertical-align: middle;
-
         margin-right: 5px;
     }
 
-    .mainlogo {
+    .maincoordinates {
+        display: block;
+        /* Gör bilden synlig */
+        width: 200px;
+        margin: 7rem 0 -5rem 10rem;
+    }
 
+    .mainlogo {
+        display: none;
+        /* Gör bilden osynlig */
+    }
+
+    .maintext {
+        display: none;
+        /* Gör bilden osynlig */
+    }
+
+    .mainherologo {
+        display: block;
+        /* Gör bilden synlig */
+        width: 1100px;
+        margin: 0 0 2rem 12rem;
+    }
+
+    .basestatus {
+        display: block;
+        margin: auto;
+
+    }
+
+    .herotext {
+        display: block;
+        /* Gör texten synlig */
+        font-size: 1.3rem;
+        text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        box-sizing: border-box;
+        background-color: rgba(5, 13, 22, 0.35);
+        padding: 2rem 15%;
+        order-top: 1px solid #d4af64;
+        order-bottom: 1px solid #d4af64;
+    }
+
+    .mainlinks {
+        display: none;
+        /* Gör bilderna osynlig */
+    }
+
+    .mainherolinks {
+        display: flex;
+        justify-content: center;
+        /* Styr placering horisontellt i flexbox */
+        margin: 8rem 0 8rem 0;
+        gap: 1rem;
+    }
+
+    .mainherolinks img {
+        width: 600px;
+        height: auto;
+    }
+
+    .bottomtext {
+        max-width: 800px;
+        margin-left: 10rem;
     }
 }
