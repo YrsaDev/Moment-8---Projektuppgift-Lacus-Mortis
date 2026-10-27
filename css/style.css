@@ -51,6 +51,10 @@ header {
     padding-left: 20px;
 }
 
+.headericonlogo {
+    display: none; /* Gör bilden osynlig */
+}
+
 .login-icon {
     width: 50px;
     height: auto;
@@ -167,7 +171,7 @@ h1 {
     filter: drop-shadow(0 0 12px rgba(212, 175, 100, 0.9));
 }
 
-/* Info area under mainlinks*/
+/* Info area under mainlinks */
 .bottomsection {
     background-image: url("../images/main_infoarea.webp");
     background-size: cover;
@@ -207,7 +211,7 @@ h1 {
     line-height: 1.6;
 }
 
-/* Footer*/
+/* Footer */
 .footer {
     background-color: #08131D;
     height: 80px;
@@ -225,19 +229,85 @@ h1 {
 
 }
 
-/*Desktop skärmar*/
+/* Desktop skärmar */
+
+
+
+/* Header navigering */
 @media (min-width: 768px) {
     .menu-toggle {
         display: none;
     }
 
     .menu {
-        display: block;
+        display: block; /* Tar hela radens bredd */
         width: auto;
+        position: static;
+        padding: 0;
+        transform: translateY(20px);
+        background-color: transparent;
     }
 
     .menu ul {
         display: flex;
         gap: 2rem;
+    }
+
+    .menu a {
+        display: inline block; /* Länk får egen yta runt sig, tar inte hela raden */
+        border-top: 2px solid transparent;
+        padding-top: 8px;
+    }
+
+    .menu a:hover {
+        border-top-color: #d4af64;
+    }
+
+    body::before {
+        content: "";
+        /* Skapar ett tomt pseudo-element utan textinnehåll */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100lvh;
+        background-image: url('../images/background_desktop.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 50px;
+    }
+
+    .headerlogo {
+        max-width: none;
+        width: 450px;
+        display: none;  /* Gör bilden osynlig */
+    }
+
+    .headericonlogo {
+        display: block;
+        width: 600px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .login-icon {
+        width: 50px;
+        height: auto;
+        vertical-align: middle;
+
+        margin-right: 5px;
+    }
+
+    .mainlogo {
+
     }
 }
