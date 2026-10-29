@@ -170,6 +170,21 @@ body.visit::before {
     color: #e89a9a;
 }
 
+.visitapplication button.resetform {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+    color: #b0b8c4;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Footer */
 .footer {
     background-color: #08131D;

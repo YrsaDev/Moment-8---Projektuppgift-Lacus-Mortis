@@ -60,10 +60,15 @@ visitForm.addEventListener("submit", function (event) {  // reaktion på skicka,
   document.querySelector("#formmessage").classList.remove("error");
   document.querySelector("#formmessage").textContent = "Alla fält är korrekt ifyllda!";
 
-  visitForm.reset();
+
 
 }); 
 
   visitForm.addEventListener("input", function() {  //input reagerar på  när något skrivs eller ändras i formuläret
   document.querySelector("#formmessage").textContent = "";  //textContent tömmer bekräftelsemeddelandet
+});
+
+visitForm.addEventListener("reset", function() {
+    document.querySelector("#formmessage").textContent = "";
+    document.querySelector("#formmessage").classList.remove("error");
 });
