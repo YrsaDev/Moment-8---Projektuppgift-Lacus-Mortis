@@ -43,6 +43,13 @@ visitForm.addEventListener("submit", function (event) {  // reaktion på skicka,
     return; //avbryter funktionen
   }
 
+  // Validering besökstyp
+  if (visitType === "") {
+    document.querySelector("#formmessage").classList.add("error");
+    document.querySelector("#formmessage").textContent = "Du måste välja en besökstyp.";
+    return;
+}
+
   // Validering meddelande
   if (message.trim() === "") {
     document.querySelector("#formmessage").classList.add("error");
