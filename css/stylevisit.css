@@ -160,6 +160,12 @@ body.visit::before {
     cursor: pointer;
 }
 
+#formmessage {
+    color: #d4af64;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
 /* Footer */
 .footer {
     background-color: #08131D;
