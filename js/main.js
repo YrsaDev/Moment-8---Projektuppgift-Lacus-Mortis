@@ -26,26 +26,31 @@ visitForm.addEventListener("submit", function (event) {  // reaktion på skicka,
   const message = document.querySelector("#message").value;
   // Validering namn
   if (name.trim() === "") {    //kontroll om namnet är tomt eller bara innehåller mellanslag
-    alert("Du måste fylla i ditt namn.");  //varningsmeddelande 
+    document.querySelector("#formmessage").classList.add("error");  //ändrar format på felmeddelande
+    document.querySelector("#formmessage").textContent = "Du måste fylla i ditt namn.";  //varningsmeddelande 
     return;  //avbryter funktionen om namn saknas, körs bara om villkoret i if är true
   }
   // Validering email
   if (email.trim() === "") {
-    alert("Du måste fylla i din e-postadress.");
+    document.querySelector("#formmessage").classList.add("error");
+    document.querySelector("#formmessage").textContent = "Du måste fylla i din e-postadress.";
     return;
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {   //kontroll att epost innehåller @ och text före och efter och ! betyder inte, if körs om @ saknas
-    alert("Ange en giltig e-postadress.");
+    document.querySelector("#formmessage").classList.add("error");
+    document.querySelector("#formmessage").textContent = "Ange en giltig e-postadress.";
     return; //avbryter funktionen
   }
 
   // Validering meddelande
   if (message.trim() === "") {
-    alert("Du måste skriva ett meddelande.");
+    document.querySelector("#formmessage").classList.add("error");
+    document.querySelector("#formmessage").textContent = "Du måste skriva ett meddelande.";
     return;
   }
 
+  document.querySelector("#formmessage").classList.remove("error");
   document.querySelector("#formmessage").textContent = "Alla fält är korrekt ifyllda!";
 
   visitForm.reset();

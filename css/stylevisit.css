@@ -166,6 +166,10 @@ body.visit::before {
     font-size: 0.9rem;
 }
 
+#formmessage.error {
+    color: #e89a9a;
+}
+
 /* Footer */
 .footer {
     background-color: #08131D;
