@@ -24,6 +24,28 @@ visitForm.addEventListener("submit", function (event) {  // reaktion på skicka,
   const email = document.querySelector("#email").value;
   const visitType = document.querySelector("#visittype").value;
   const message = document.querySelector("#message").value;
+  // Validering namn
+  if (name.trim() === "") {    //kontroll om namnet är tomt eller bara innehåller mellanslag
+    alert("Du måste fylla i ditt namn.");  //varningsmeddelande 
+    return;  //avbryter funktionen om namn saknas, körs bara om villkoret i if är true
+  }
+  // Validering email
+  if (email.trim() === "") {
+    alert("Du måste fylla i din e-postadress.");
+    return;
+  }
 
-  console.log(message);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {   //kontroll att epost innehåller @ och text före och efter och ! betyder inte, if körs om @ saknas
+    alert("Ange en giltig e-postadress.");
+    return; //avbryter funktionen
+  }
+
+  // Validering meddelande
+  if (message.trim() === "") {
+    alert("Du måste skriva ett meddelande.");
+    return;
+  }
+
+  alert("Alla fält är korrekt ifyllda!");
+
 }); 

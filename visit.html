@@ -62,7 +62,7 @@
     <section class="visitapplication">
         <H2>KONTAKTA OSS</H2>
 
-        <form id="visitform">
+        <form id="visitform" novalidate> <!-- Webbläsaren får inte göra sin egna formulärvalidering -->
             <label for="name">Namn</label>
             <!-- Label = Fältbeskrvning, for="name" = kopplar etikett till rätt inputfält, type="text" = textfält, id="name" = identifierar och matchar for, name="name" = anger namnet som används vid skick -->
             <input type="text" id="name" name="name">
