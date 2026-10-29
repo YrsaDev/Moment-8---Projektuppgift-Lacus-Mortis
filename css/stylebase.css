@@ -1,0 +1,141 @@
+/* Grundläggande styling */
+/* Fixerad bakgrund för mobil och desktop.
+   ::before skapar ett separat bakgrundslager.
+   position: fixed håller bakgrunden stilla vid scrollning.
+   100lvh förhindrar att bakgrunden zoomar när
+   mobilens adressfält visas eller döljs.
+*/
+body.base::before {
+    content: "";
+    /* Skapar ett tomt pseudo-element utan textinnehåll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100lvh;
+    background-image:
+        linear-gradient(rgba(120, 145, 165, 0.15),
+            rgba(120, 145, 165, 0.15)),
+        url('../images/backgroundbase_mobile.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Huvudinnehåll HUVUDANLÄGGNING*/
+.basemaintext {
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    min-height: 150px;
+    width: 100%;
+    margin-top: 12rem;
+}
+
+.basemaininfo {
+    padding: 1.5rem;
+    color: white;
+    text-align: left;
+}
+
+.basemaininfo h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 1rem 0 1.5rem;
+}
+
+.basemaininfo p {
+    font-weight: 200;
+}
+
+.baseinfo {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.baseimgtext img {
+    width: 100%;
+    height: auto;
+}
+
+.baseblock {
+    padding: 0.2rem;
+    color: white;
+    text-align: left;
+    font-weight: 200;
+    margin-bottom: 3rem;
+}
+
+.baseblock h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 1rem 0 0rem;
+}
+
+.baseline {
+    height: 1px;
+    width: 60%;
+    background-color: #d4af64;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #08131D;
+    height: 80px;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.footer p {
+    color: #d4af64;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding-top: 1rem;
+
+}
+
+/* Desktop skärmar */
+@media (min-width: 768px) {
+
+    body.base::before {
+        content: "";
+        /* Skapar ett tomt pseudo-element utan textinnehåll */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100lvh;
+        background-image:
+            linear-gradient(rgba(120, 145, 165, 0.15),
+                rgba(120, 145, 165, 0.15)),
+            url('../images/backgroundbase_desktop.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    .basemaininfo {
+        padding: 1.5rem;
+        color: white;
+        text-align: left;
+        margin-top: 35rem;
+        margin-left: 15rem;
+    }
+
+    .basemaininfo h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.3;
+        margin: 1rem 0 1.5rem;
+    }
+}

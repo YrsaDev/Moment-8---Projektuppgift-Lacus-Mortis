@@ -30,7 +30,7 @@ body::before {
     rgba(120, 145, 165, 0.15),
     rgba(120, 145, 165, 0.15)
     ),
-    url('../images/background_desktop.webp');
+    url('../images/background_mobile.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -119,7 +119,7 @@ h1 {
     margin: 0;
 }
 
-/* Huvudinnehåll */
+/* Huvudinnehåll STARTSIDA*/
 .maincoordinates {
     display: none;
     /* Gör bilden osynlig */
@@ -265,7 +265,6 @@ h1 {
 }
 
 /* Desktop skärmar */
-
 /* Header navigering */
 @media (min-width: 768px) {
     .menu-toggle {
@@ -393,8 +392,6 @@ h1 {
         box-sizing: border-box;
         background-color: rgba(5, 13, 22, 0.35);
         padding: 2rem 15%;
-        order-top: 1px solid #d4af64;
-        order-bottom: 1px solid #d4af64;
     }
 
     .mainlinks {
