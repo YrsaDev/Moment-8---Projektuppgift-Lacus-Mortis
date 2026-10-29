@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Inter:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inspiration&family=Inter:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/stylevisit.css">
     <script src="js/main.js" defer></script>
@@ -14,11 +16,13 @@
 </head>
 
 <body class="visit">
- <!-- Sidhuvud och navigering -->
+    <!-- Sidhuvud och navigering -->
     <header>
 
-        <img src="images/logotext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headerlogo"> <!-- Bild för Mobil -->
-        <img src="images/logoicontext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headericonlogo"> <!-- Bild för Desktop -->
+        <img src="images/logotext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headerlogo">
+        <!-- Bild för Mobil -->
+        <img src="images/logoicontext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headericonlogo">
+        <!-- Bild för Desktop -->
 
         <button class="menu-toggle">☰</button>
         <nav class="menu">
@@ -28,22 +32,55 @@
                 <li><a href="rimae.html">Rimae fältstation</a></li>
                 <li><a href="science.html">Forskningsområden</a></li>
                 <li><a href="visit.html">Besök oss</a></li>
-                <li><a href="secure.html"><img src="images/icon_login.png" alt="Logga in" class="login-icon">Säkerhetsklass</a>
+                <li><a href="secure.html"><img src="images/icon_login.png" alt="Logga in"
+                            class="login-icon">Säkerhetsklass</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-<section class="visitus">
-    <span>BESÖK VÅRAN ANLÄGGNING</span>
+    <section class="visitus">
+        <span>BESÖK VÅRAN ANLÄGGNING</span>
 
-    <h1>BESÖKA OSS</h1>
+        <h1>BESÖKA OSS</h1>
 
-    <p>Vi välkomnar forskare, samarbetspartners, studenter och utvalda sponsorer som vill besöka eller delta i projekt vid 
-    vår anläggning på Lacus Mortis.</p>
-</section>
+        <p>Vi välkomnar forskare, samarbetspartners, studenter och utvalda sponsorer som vill besöka eller delta i
+            projekt vid
+            vår anläggning på Lacus Mortis.</p>
+    </section>
 
+    <section class="whovisit">
+        <h2>Vem kan besöka oss</h2>
+        <div class="visitcards">
+            <img src="images/visiticon_scientist.webp" alt="Forskare">
+            <img src="images/visiticon_partners.webp" alt="Samabretspartners">
+            <img src="images/visiticon_students.webp" alt="Studenter">
+            <img src="images/visiticon_sponsors.webp" alt="Utvalda sponsorer">
+        </div>
+    </section>
 
+    <section class="visitapplication">
+        <H2>KONTAKTA OSS</H2>
+
+        <form>
+            <label for="name">Namn</label>
+            <!-- Label = Fältbeskrvning, for="name" = kopplar etikett till rätt inputfält, type="text" = textfält, id="name" = identifierar och matchar for, name="name" = anger namnet som används vid skick -->
+            <input type="text" id="name" name="name">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email">
+            <label for="visittype">Besökstyp</label>
+            <select id="visittype" name="visittype">
+                <option value="scientist">Forskare</option>
+                <option value="partner">Samarbetspartner</option>
+                <option value="student">Studenter</option>
+                <option value="sponsor">Sponsor</option>
+            </select>
+            <label for="message">Meddelande</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Skicka</button>
+        </form>
+
+    </section>
 
 
 
