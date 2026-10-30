@@ -39,7 +39,7 @@ body.base::before {
     text-align: left;
 }
 
-.basemaininfo h2 {
+.basemaininfo h1 {
     font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.3;
@@ -70,7 +70,7 @@ body.base::before {
     margin-bottom: 3rem;
 }
 
-.baseblock h3 {
+.baseblock h2 {
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.1;
@@ -83,24 +83,6 @@ body.base::before {
     background-color: #d4af64;
     margin: 0 auto;
     margin-bottom: 1rem;
-}
-
-/* Footer */
-.footer {
-    background-color: #08131D;
-    height: 80px;
-    text-align: center;
-    border-top: 1px solid rgba(212, 175, 100, 0.6);
-    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
-}
-
-.footer p {
-    color: #d4af64;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    font-weight: 500;
-    padding-top: 1rem;
-
 }
 
 /* Desktop skärmar */
@@ -130,12 +112,11 @@ body.base::before {
         padding: 1.5rem;
         color: white;
         text-align: left;
-        margin-top: 35rem;
         margin: 35rem auto 0;
         box-sizing: border-box;                /* Padding och border räknas in i den bredd och höjd du sätter, så elementet blir exakt så stort som du anger */
     }
 
-    .basemaininfo h2 {
+    .basemaininfo h1 {
         font-size: 2rem;
         font-weight: 600;
         line-height: 1.3;

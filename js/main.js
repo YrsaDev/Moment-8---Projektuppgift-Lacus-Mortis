@@ -17,58 +17,60 @@ menuBtn.addEventListener("click", () => {
 });
 
 // Besöksformulär
-const visitForm = document.querySelector("#visitform"); // js hittar forumlär via ID
-visitForm.addEventListener("submit", function (event) {  // reaktion på skicka, "listener"lyssnar efter händelse, "submit" är händelsen vid skick, "function" är funktionen när så sker
-  event.preventDefault();  // förhindrar att sidan laddas om vid skick
-  const name = document.querySelector("#name").value;  //"query-del" hittar Namn-fält i HTML, ".value" hämtar värde skrivet, "const name" sparar värdet i en variabel
-  const email = document.querySelector("#email").value;
-  const visitType = document.querySelector("#visittype").value;
-  const message = document.querySelector("#message").value;
-  // Validering namn
-  if (name.trim() === "") {    //kontroll om namnet är tomt eller bara innehåller mellanslag
-    document.querySelector("#formmessage").classList.add("error");  //ändrar format på felmeddelande
-    document.querySelector("#formmessage").textContent = "Du måste fylla i ditt namn.";  //varningsmeddelande 
-    return;  //avbryter funktionen om namn saknas, körs bara om villkoret i if är true
-  }
-  // Validering email
-  if (email.trim() === "") {
-    document.querySelector("#formmessage").classList.add("error");
-    document.querySelector("#formmessage").textContent = "Du måste fylla i din e-postadress.";
-    return;
-  }
+const visitForm = document.querySelector("#visitform");  // js hittar forumlär via ID
+if (visitForm) { 
+  visitForm.addEventListener("submit", function (event) {  // reaktion på skicka, "listener"lyssnar efter händelse, "submit" är händelsen vid skick, "function" är funktionen när så sker
+    event.preventDefault();  // förhindrar att sidan laddas om vid skick
+    const name = document.querySelector("#name").value;  //"query-del" hittar Namn-fält i HTML, ".value" hämtar värde skrivet, "const name" sparar värdet i en variabel
+    const email = document.querySelector("#email").value;
+    const visitType = document.querySelector("#visittype").value;
+    const message = document.querySelector("#message").value;
+    // Validering namn
+    if (name.trim() === "") {    //kontroll om namnet är tomt eller bara innehåller mellanslag
+      document.querySelector("#formmessage").classList.add("error");  //ändrar format på felmeddelande
+      document.querySelector("#formmessage").textContent = "Du måste fylla i ditt namn.";  //varningsmeddelande 
+      return;  //avbryter funktionen om namn saknas, körs bara om villkoret i if är true
+    }
+    // Validering email
+    if (email.trim() === "") {
+      document.querySelector("#formmessage").classList.add("error");
+      document.querySelector("#formmessage").textContent = "Du måste fylla i din e-postadress.";
+      return;
+    }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {   //kontroll att epost innehåller @ och text före och efter och ! betyder inte, if körs om @ saknas
-    document.querySelector("#formmessage").classList.add("error");
-    document.querySelector("#formmessage").textContent = "Ange en giltig e-postadress.";
-    return; //avbryter funktionen
-  }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {   //kontroll att epost innehåller @ och text före och efter och ! betyder inte, if körs om @ saknas
+      document.querySelector("#formmessage").classList.add("error");
+      document.querySelector("#formmessage").textContent = "Ange en giltig e-postadress.";
+      return; //avbryter funktionen
+    }
 
-  // Validering besökstyp
-  if (visitType === "") {
-    document.querySelector("#formmessage").classList.add("error");
-    document.querySelector("#formmessage").textContent = "Du måste välja en besökstyp.";
-    return;
-}
+    // Validering besökstyp
+    if (visitType === "") {
+      document.querySelector("#formmessage").classList.add("error");
+      document.querySelector("#formmessage").textContent = "Du måste välja en besökstyp.";
+      return;
+    }
 
-  // Validering meddelande
-  if (message.trim() === "") {
-    document.querySelector("#formmessage").classList.add("error");
-    document.querySelector("#formmessage").textContent = "Du måste skriva ett meddelande.";
-    return;
-  }
+    // Validering meddelande
+    if (message.trim() === "") {
+      document.querySelector("#formmessage").classList.add("error");
+      document.querySelector("#formmessage").textContent = "Du måste skriva ett meddelande.";
+      return;
+    }
 
-  document.querySelector("#formmessage").classList.remove("error");
-  document.querySelector("#formmessage").textContent = "Alla fält är korrekt ifyllda!";
+    document.querySelector("#formmessage").classList.remove("error");
+    document.querySelector("#formmessage").textContent = "Alla fält är korrekt ifyllda!";
 
 
 
-}); 
+  });
 
-  visitForm.addEventListener("input", function() {  //input reagerar på  när något skrivs eller ändras i formuläret
-  document.querySelector("#formmessage").textContent = "";  //textContent tömmer bekräftelsemeddelandet
-});
+  visitForm.addEventListener("input", function () {  //input reagerar på  när något skrivs eller ändras i formuläret
+    document.querySelector("#formmessage").textContent = "";  //textContent tömmer bekräftelsemeddelandet
+  });
 
-visitForm.addEventListener("reset", function() {
+  visitForm.addEventListener("reset", function () {
     document.querySelector("#formmessage").textContent = "";
     document.querySelector("#formmessage").classList.remove("error");
-});
+  });
+}
