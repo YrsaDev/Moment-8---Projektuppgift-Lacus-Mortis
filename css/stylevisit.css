@@ -223,6 +223,59 @@ body.visit::before {
     margin: 0 1rem 1rem 0;
 }
 
+.visitreq {
+    background-color: #08131D;
+    width: 83%;
+    padding: 1rem;
+    margin: 2rem 0 2rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    border-left: 1px solid rgba(212, 175, 100, 0.6);
+    border-right: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.visitcardsreq {
+    display: flex;
+    /* Styra så bilderna hamnar bredvid varandra, centrera och för responsivitet */
+    flex-direction: row;
+    /* Lägger bilder horisontellt */
+    flex-wrap: wrap;
+    /* Flyttar ner bilder som ej får plats på raden */
+    justify-content: center;
+    /* Styr hur bildgruppen placertas horisontellt i behållaren*/
+    align-items: center;
+    /* Centrerar bilderna vertikal i raden */
+    gap: 1rem;
+    /* Jämnt mellanrum mellan bilderna*/
+}
+
+.visitreq img {
+    width: 100%;
+    height: auto;
+}
+
+.visitreq p {
+    font-family: Rajdhani, sans-serif;
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    margin: 0 1rem 1rem 0;
+}
+
+.visitreq h2 {
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    width: 80%;
+    margin-left: 0.7rem;
+}
+
 
 /* Footer */
 .footer {
