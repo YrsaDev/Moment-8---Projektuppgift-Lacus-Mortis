@@ -20,6 +20,7 @@ body::before {
 
 .securitypanel {
     box-sizing: border-box;
+    height: 700px;
     width: 90%;
     margin: 4rem auto;
     padding: 1rem;
@@ -98,6 +99,7 @@ body::before {
 #securitycode {
     color: white;
     caret-color: white;
+    font-size: 16px;     /* Förhindrar inzoomning i vissa mobilwebbläsare när man trycker i inmatninsfält*/
 }
 
 /* Rätt säkerhetskod – grön bakgrund */
@@ -108,4 +110,17 @@ body.granted::before {
 /* Fel säkerhetskod – röd bakgrund */
 body.denied::before {
     background-image: url("../images/securered_mobile.webp");
+}
+
+.securitypanel #clearSecurity {
+    background: none;
+    border: none;
+    color: #d7e1ea;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    width: auto;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
 }

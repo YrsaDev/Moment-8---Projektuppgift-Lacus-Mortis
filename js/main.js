@@ -18,7 +18,7 @@ menuBtn.addEventListener("click", () => {
 
 // Besöksformulär
 const visitForm = document.querySelector("#visitform");  // js hittar forumlär via ID
-if (visitForm) { 
+if (visitForm) {
   visitForm.addEventListener("submit", function (event) {  // reaktion på skicka, "listener"lyssnar efter händelse, "submit" är händelsen vid skick, "function" är funktionen när så sker
     event.preventDefault();  // förhindrar att sidan laddas om vid skick
     const name = document.querySelector("#name").value;  //"query-del" hittar Namn-fält i HTML, ".value" hämtar värde skrivet, "const name" sparar värdet i en variabel
@@ -76,19 +76,47 @@ if (visitForm) {
 }
 
 // Restricted area
-  const btn = document.getElementById("verifyBtn");   // js hittar forumlär via ID
-  const input = document.getElementById("securitycode");  // hämtar lösenordsfältet med ID securitycode från HTML och sparar det i variabeln input
-  const msg = document.getElementById("securitymessage");   // hämtar elementet från HTML och sparar det i msg så vi kan skriva ut ett svar
-  if (btn) {
-    btn.addEventListener("click", () => {
-      if (input.value === "1111") {
-        document.body.classList.remove("denied");
-        document.body.classList.add("granted");
-        msg.textContent = "ACCESS GRANTED";
-       } else { 
-        document.body.classList.remove("granted");
-        document.body.classList.add("denied");
-        msg.textContent = "ACCESS DENIED";
+const btn = document.getElementById("verifyBtn");   // js hittar forumlär via ID
+const input = document.getElementById("securitycode");  // hämtar lösenordsfältet med ID securitycode från HTML och sparar det i variabeln input
+const msg = document.getElementById("securitymessage");   // hämtar elementet från HTML och sparar det i msg så vi kan skriva ut ett svar
+const clearBtn = document.getElementById("clearSecurity");
+if (btn) {
+  btn.addEventListener("click", () => {
+    if (input.value.trim() === "") {  // tar bort eventuellt mellanslag i början/slutet för kontrollen
+      msg.textContent = "ANGE SÄKERHETSKOD";
+      document.body.classList.remove("granted", "denied");
+    } else if (input.value === "1111") {
+      document.body.classList.remove("denied");
+      document.body.classList.add("granted");
+      msg.textContent = "ACCESS GRANTED";
+    } else {
+      document.body.classList.remove("granted");
+      document.body.classList.add("denied");
+      msg.textContent = "ACCESS DENIED";
+    }
+  });
 }
-});
+if (clearBtn) {
+  clearBtn.addEventListener("click", function () {
+    input.value = "";    // tömmer säkerhetskoden
+    msg.textContent = "";    // tar bort access granted/denied
+
+    document.body.classList.remove("granted", "denied");   // återställer den neutrala färgen på bakgrunden
+  });
+}
+if (input) {
+  input.addEventListener("input", function () {   // reaktion när något ändras i säkerhetsfältet
+    msg.textContent = "";    // tar bort det tidigare åtkomstmeddelandet
+
+    document.body.classList.remove("granted", "denied");  // återställer den neutrala färgen på bakgrunden
+  });
+}
+// Känner av tangetbordstryckning Enter
+if (input) {
+    input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            btn.click();
+        }
+    });
 }
