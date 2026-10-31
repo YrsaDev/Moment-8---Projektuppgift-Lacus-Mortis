@@ -7,11 +7,9 @@ body::before {
     width: 100%;
     height: 100lvh;
     background-image:
-    linear-gradient(
-    rgba(120, 145, 165, 0.15),
-    rgba(120, 145, 165, 0.15)
-    ),
-    url('../images/securewhite_mobile.webp');
+        linear-gradient(rgba(120, 145, 165, 0.15),
+            rgba(120, 145, 165, 0.15)),
+        url('../images/securewhite_mobile.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,7 +39,8 @@ body::before {
 }
 
 .securitypanel button {
-    display: block;      /* Tillsammans med margin: auto centreras det */
+    display: block;
+    /* Tillsammans med margin: auto centreras det */
     background-color: rgba(5, 13, 22, 0.8);
     color: white;
     border: 1px solid #d4af64;
@@ -99,7 +98,8 @@ body::before {
 #securitycode {
     color: white;
     caret-color: white;
-    font-size: 16px;     /* Förhindrar inzoomning i vissa mobilwebbläsare när man trycker i inmatninsfält*/
+    font-size: 16px;
+    /* Förhindrar inzoomning i vissa mobilwebbläsare när man trycker i inmatninsfält*/
 }
 
 /* Rätt säkerhetskod – grön bakgrund */
@@ -123,4 +123,20 @@ body.denied::before {
     display: block;
     margin: 0 auto;
     cursor: pointer;
+}
+
+#securityinfo {
+    /* # Används för ID, för unikt element, unikt ID förekommer bara en gång, ID har även högre prioritet än klasser om konkurrans uppstår*/
+    text-align: center;
+}
+
+#securityinfo h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    color: #4ade80;
+}
+
+#securityinfo p {
+    font-size: 1rem;
+    margin: 0.8rem 0;
 }

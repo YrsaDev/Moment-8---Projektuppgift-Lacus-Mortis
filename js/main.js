@@ -80,6 +80,9 @@ const btn = document.getElementById("verifyBtn");   // js hittar forumlär via I
 const input = document.getElementById("securitycode");  // hämtar lösenordsfältet med ID securitycode från HTML och sparar det i variabeln input
 const msg = document.getElementById("securitymessage");   // hämtar elementet från HTML och sparar det i msg så vi kan skriva ut ett svar
 const clearBtn = document.getElementById("clearSecurity");
+const securityInfo = document.getElementById("securityinfo");  // hämtar informationsrutan från html
+const securityLogin = document.getElementById("securitylogin");
+const lockBtn = document.getElementById("lockSecurity");  // låser systemet
 if (btn) {
   btn.addEventListener("click", () => {
     if (input.value.trim() === "") {  // tar bort eventuellt mellanslag i början/slutet för kontrollen
@@ -89,6 +92,8 @@ if (btn) {
       document.body.classList.remove("denied");
       document.body.classList.add("granted");
       msg.textContent = "ACCESS GRANTED";
+      securityLogin.hidden = true;   // döljer säkerhetskontrollen innan
+      securityInfo.hidden = false;   // visar den nya behörighetsinformationen
     } else {
       document.body.classList.remove("granted");
       document.body.classList.add("denied");
@@ -118,5 +123,16 @@ if (input) {
             event.preventDefault();
             btn.click();
         }
+    });
+}
+if (lockBtn) {
+    lockBtn.addEventListener("click", function () {
+        securityInfo.hidden = true;
+        securityLogin.hidden = false;
+
+        input.value = "";
+        msg.textContent = "";
+
+        document.body.classList.remove("granted", "denied");
     });
 }
