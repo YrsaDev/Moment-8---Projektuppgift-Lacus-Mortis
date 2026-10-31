@@ -141,11 +141,12 @@ body.denied::before {
     margin: 0.8rem 0;
 }
 
+body.granted .securitypanel {    /* Anpassar rutans höjd efter innehållet vid godkänd behörighet */
+    height: auto;
+}
+
 /* Desktop */
 @media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
 
    body::before {
     content: "";
@@ -188,10 +189,8 @@ body.denied::before {
         background-image: url("../images/securered_desktop.webp");
     }
 
-}
-
 .securitypanel {
     width: 800px;
     max-width: 90%;
     margin-top: 7rem;
-}
+}}

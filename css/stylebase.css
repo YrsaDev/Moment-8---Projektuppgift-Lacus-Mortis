@@ -24,6 +24,10 @@ body.base::before {
 }
 
 /* Huvudinnehåll HUVUDANLÄGGNING*/
+.stationhud {
+    display: none;
+}
+
 .basemaintext {
     background-size: cover;
     background-position: right center;
@@ -36,7 +40,7 @@ body.base::before {
 .basemaininfo {
     padding: 1.5rem;
     color: white;
-    text-align: left;
+    text-align: left
 }
 
 .basemaininfo h1 {
@@ -106,14 +110,39 @@ body.base::before {
         z-index: -1;
     }
 
+    @media (min-width: 768px) {
+    .stationhud {
+        display: block;
+    }
+}
+
+    .stationhud {
+        display: block;
+        height: auto;
+        margin-left: auto;
+        margin-right: 15rem;
+        width: 53%;
+        max-width: 900px;  /* För responsivitet */
+    }
+
+    .stationhud img {
+        width: 100%;
+        height: auto;
+    }
+
+    .basemaintext {
+    margin-top: 0;
+}
+
     .basemaininfo {
         background-color: rgba(5, 13, 22, 0.8);
         max-width: 80%;
         padding: 1.5rem;
         color: white;
         text-align: left;
-        margin: 35rem auto 0;
-        box-sizing: border-box;                /* Padding och border räknas in i den bredd och höjd du sätter, så elementet blir exakt så stort som du anger */
+        margin: 0 auto;
+        box-sizing: border-box;
+        /* Padding och border räknas in i den bredd och höjd du sätter, så elementet blir exakt så stort som du anger */
     }
 
     .basemaininfo h1 {
