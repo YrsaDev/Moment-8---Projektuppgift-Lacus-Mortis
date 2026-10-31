@@ -74,3 +74,5 @@ if (visitForm) {
     document.querySelector("#formmessage").classList.remove("error");
   });
 }
+
+// Restricted area
