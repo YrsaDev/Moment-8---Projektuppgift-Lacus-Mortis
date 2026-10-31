@@ -1,0 +1,466 @@
+/* Grundläggande styling */
+/* Fixerad bakgrund för mobil och desktop.
+   ::before skapar ett separat bakgrundslager.
+   position: fixed håller bakgrunden stilla vid scrollning.
+   100lvh förhindrar att bakgrunden zoomar när
+   mobilens adressfält visas eller döljs.
+*/
+body.visit::before {
+    content: "";
+    /* Skapar ett tomt pseudo-element utan textinnehåll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100lvh;
+    background-image:
+        linear-gradient(rgba(120, 145, 165, 0.15),
+            rgba(120, 145, 165, 0.15)),
+        url('../images/backgroundvisit_mobile.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Huvudinnehåll HUVUDANLÄGGNING*/
+
+.whovisit {
+    background-color: #08131D;
+    width: 83%;
+    padding: 1rem;
+    margin: 8rem 0 0 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    border-left: 1px solid rgba(212, 175, 100, 0.6);
+    border-right: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.whovisit h2 {
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    width: 80%;
+    margin-left: 0.7rem;
+}
+
+.visitcards {
+    display: flex;
+    /* Styra så bilderna hamnar bredvid varandra, centrera och för responsivitet */
+    flex-direction: row;
+    /* Lägger bilder horisontellt */
+    flex-wrap: wrap;
+    /* Flyttar ner bilder som ej får plats på raden */
+    justify-content: center;
+    /* Styr hur bildgruppen placertas horisontellt i behållaren*/
+    align-items: center;
+    /* Centrerar bilderna vertikal i raden */
+    gap: 1rem;
+    /* Jämnt mellanrum mellan bilderna*/
+}
+
+.visitcards img {
+    width: 45%;
+    /* 2 bilder med denna storlek får plats bredvid varandra */
+    max-width: 200px;
+    /* Sätter tack så bilderna inte blir för stora på större skärmar */
+    height: auto;
+    /* Bildernas höjd anpassas automatiskt när bredden ändras för att bibehålla proportioner */
+}
+
+.visitapplication form {
+    display: flex;
+    /* Skapar en flexcontainer */
+    flex-direction: column;
+    /* Lägger fälten lodrätt */
+    gap: 1rem;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.visitapplication label {
+    font-family: 'rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: -0.9rem;
+}
+
+.visitapplication h2 {
+    font-family: Rajdhani, sans-serif;
+    margin-left: 2rem;
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.visitapplication input,
+.visitapplication select,
+.visitapplication textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(5, 13, 22, 0.8);
+    color: white;
+    border: 1px solid #526273;
+    border-radius: 5px;
+    padding: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px ;      /* Förhindrar inzoomning i vissa mobilwebbläsare när man trycker i inmatninsfält*/
+}
+
+.visitapplication textarea {
+    min-height: 120px;
+}
+
+.visitapplication select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d4af64' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    /* Data-URL innehåller bildens kod direkt i CSS.
+   SVG-koden ritar en egen guldfärgad pil utan bildfil. */
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.5rem;
+}
+
+.visitapplication button {
+    background-color: rgba(5, 13, 22, 0.8);
+    color: white;
+    border: 1px solid #d4af64;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    width: 80%;
+    align-self: center;
+    cursor: pointer;
+}
+
+#formmessage {
+    color: #d4af64;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#formmessage.error {
+    color: #e89a9a;
+}
+
+.visitapplication button.resetform {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+    color: #b0b8c4;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.visittravel {
+    background-color: #08131D;
+    width: 83%;
+    padding: 1rem;
+    margin: 2rem 0 0 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    border-left: 1px solid rgba(212, 175, 100, 0.6);
+    border-right: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.travelimg {
+    width: 100%;
+    height: auto;
+}
+
+.visittravel h2 {
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    width: 80%;
+    margin-left: 0.7rem;
+}
+
+.visittravelcard p {
+    font-family: Rajdhani, sans-serif;
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    margin: 0 1rem 1rem 0;
+}
+
+.visitreq {
+    background-color: #08131D;
+    width: 83%;
+    padding: 1rem;
+    margin: 2rem 0 2rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    border-left: 1px solid rgba(212, 175, 100, 0.6);
+    border-right: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.visitcardsreq {
+    display: flex;
+    /* Styra så bilderna hamnar bredvid varandra, centrera och för responsivitet */
+    flex-direction: row;
+    /* Lägger bilder horisontellt */
+    flex-wrap: wrap;
+    /* Flyttar ner bilder som ej får plats på raden */
+    justify-content: center;
+    /* Styr hur bildgruppen placertas horisontellt i behållaren*/
+    align-items: center;
+    /* Centrerar bilderna vertikal i raden */
+    gap: 1rem;
+    /* Jämnt mellanrum mellan bilderna*/
+}
+
+.visitreq img {
+    width: 45%;
+    height: auto;
+}
+
+.visitreq p {
+    font-family: Rajdhani, sans-serif;
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    margin: 0 1rem 1rem 0;
+}
+
+.visitreq h2 {
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    width: 80%;
+    margin-left: 0.7rem;
+}
+
+/* Desktop skärmar */
+@media (min-width: 768px) {
+
+    body.visit::before {
+        content: "";
+        /* Skapar ett tomt pseudo-element utan textinnehåll */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100lvh;
+        background-image:
+            linear-gradient(rgba(120, 145, 165, 0.15),
+                rgba(120, 145, 165, 0.15)),
+            url('../images/backgroundvisit_desktop.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    .whovisit {
+        background-color: #08131D;
+        width: 90%;
+        padding: 1rem;
+        margin: 35rem auto 0;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        border-top: 1px solid rgba(212, 175, 100, 0.6);
+        border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+        border-left: 1px solid rgba(212, 175, 100, 0.6);
+        border-right: 1px solid rgba(212, 175, 100, 0.6);
+    }
+
+    .whovisitspan {
+        display: block;
+        padding-left: 1rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+
+    .whovisit h1 {
+        font-family: Rajdhani, sans-serif;
+        padding-left: 1rem;
+        font-size: 3rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        width: 80%;
+    }
+
+    .whovisit h2 {
+        font-family: Rajdhani, sans-serif;
+        font-size: 1.5rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+        width: 80%;
+        padding: 3rem 1rem 0 0;
+    }
+
+    .whovisit p {
+        font-family: Rajdhani, sans-serif;
+        font-size: 1.2rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        padding: 0 0 1rem 1rem;
+    }
+
+    .visitus {
+        margin: 20rem 0 0 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    }
+
+    .visitus h1 {
+        font-family: Rajdhani, sans-serif;
+        font-size: 3rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    }
+
+    .visitus p {
+        font-family: Rajdhani, sans-serif;
+        font-size: 1rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        margin: 0 1rem 0 0;
+    }
+
+    .visitcards img {
+        width: 20%;
+        /* Större bilder horisontellt */
+        max-width: none;
+        height: auto;
+        /* Bildernas höjd anpassas automatiskt när bredden ändras för att bibehålla proportioner */
+    }
+
+    .visitapplication {
+        align-items: center;
+        width: 100%;
+        max-width: 900px;
+        margin: 2rem auto;
+        padding-bottom: 2rem;
+        background-color: #08131D;
+        border-top: 1px solid rgba(212, 175, 100, 0.6);
+        border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+        border-left: 1px solid rgba(212, 175, 100, 0.6);
+        border-right: 1px solid rgba(212, 175, 100, 0.6);
+    }
+
+    .visitapplication h2 {
+        font-family: Rajdhani, sans-serif;
+        margin-left: 4rem;
+        margin-top: 3rem;
+        font-size: 1.6rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    }
+
+    .visittravel {
+        background-color: #08131D;
+        width: 90%;
+        padding: 1rem;
+        margin: 2rem auto;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        border-top: 1px solid rgba(212, 175, 100, 0.6);
+        border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+        border-left: 1px solid rgba(212, 175, 100, 0.6);
+        border-right: 1px solid rgba(212, 175, 100, 0.6);
+    }
+
+    .travelimg {
+        display: block;
+        /* För att centrera bilden */
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .visittravel p {
+        font-family: Rajdhani, sans-serif;
+        font-size: 1rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        margin: 1rem 1rem 1rem 0;
+        padding: 0 7rem 1rem 7rem;
+    }
+
+    .visitreq {
+        background-color: #08131D;
+        width: 90%;
+        padding: 1rem;
+        margin: 2rem auto;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        border-top: 1px solid rgba(212, 175, 100, 0.6);
+        border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+        border-left: 1px solid rgba(212, 175, 100, 0.6);
+        border-right: 1px solid rgba(212, 175, 100, 0.6);
+    }
+
+    .visitcardsreq {
+        display: flex;
+        /* Styra så bilderna hamnar bredvid varandra, centrera och för responsivitet */
+        flex-direction: row;
+        /* Lägger bilder horisontellt */
+        flex-wrap: wrap;
+        /* Flyttar ner bilder som ej får plats på raden */
+        justify-content: center;
+        /* Styr hur bildgruppen placertas horisontellt i behållaren*/
+        align-items: center;
+        /* Centrerar bilderna vertikal i raden */
+        gap: 1rem;
+        /* Jämnt mellanrum mellan bilderna*/
+    }
+
+    .visitreq img {
+        display: block;
+        width: 20%;
+        height: auto;
+        margin: 2rem auto;
+    }
+
+    .visitreq p {
+        font-family: Rajdhani, sans-serif;
+        font-size: 1rem;
+        padding-top: 1rem;
+        padding-left: 7rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        margin: 0 1rem 1rem 0;
+    }
+
+    .visitreq h2 {
+        font-family: Rajdhani, sans-serif;
+        font-size: 1.5rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+        border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+        width: 80%;
+        margin-left: 0.7rem;
+    }
+
+
+}

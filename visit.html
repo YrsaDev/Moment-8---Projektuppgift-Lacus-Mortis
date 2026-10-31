@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inspiration&family=Inter:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylevisit.css">
+    <script src="js/main.js" defer></script>
+    <title>Lacus Mortis - Svensk forskning på månen</title>
+</head>
+
+<body class="visit">
+    <!-- Sidhuvud och navigering -->
+    <header>
+
+        <img src="images/logotext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headerlogo">
+        <!-- Bild för Mobil -->
+        <img src="images/logoicontext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headericonlogo">
+        <!-- Bild för Desktop -->
+
+        <button class="menu-toggle">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="base.html">Huvudanläggningen</a></li>
+                <li><a href="systemcompromised.html">Rimae fältstation</a></li>
+                <li><a href="systemcompromised.html">Forskningsområden</a></li>
+                <li><a href="visit.html">Besök oss</a></li>
+                <li><a href="secure.html"><img src="images/icon_login.png" alt="Logga in"
+                            class="login-icon">Säkerhetsklass</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="whovisit">
+        <span class="whovisitspan">BESÖK VÅRAN ANLÄGGNING</span>
+
+        <h1>BESÖKA OSS</h1>
+
+        <p>Vi välkomnar forskare, samarbetspartners, studenter och utvalda sponsorer som vill besöka eller delta i
+            projekt vid
+            vår anläggning på Lacus Mortis.</p>
+        <h2>Vem kan besöka oss</h2>
+        <div class="visitcards">
+            <img src="images/visiticon_scientist.webp" alt="Forskare">
+            <img src="images/visiticon_partners.webp" alt="Samabretspartners">
+            <img src="images/visiticon_students.webp" alt="Studenter">
+            <img src="images/visiticon_sponsors.webp" alt="Utvalda sponsorer">
+        </div>
+    </section>
+
+    <section class="visitapplication">
+        <H2>KONTAKTA OSS</H2>
+
+        <form id="visitform" novalidate> <!-- Webbläsaren får inte göra sin egna formulärvalidering -->
+            <label for="name">Namn</label>
+            <!-- Label = Fältbeskrvning, for="name" = kopplar etikett till rätt inputfält, type="text" = textfält, id="name" = identifierar och matchar for, name="name" = anger namnet som används vid skick -->
+            <input type="text" id="name" name="name">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email">
+            <label for="visittype">Besökstyp</label>
+            <select id="visittype" name="visittype">
+                <option value="" selected disabled>Välj besökstyp</option>
+                <option value="scientist">Forskare</option>
+                <option value="partner">Samarbetspartner</option>
+                <option value="student">Studenter</option>
+                <option value="sponsor">Sponsor</option>
+            </select>
+            <label for="message">Meddelande</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Skicka</button>
+        </form>
+
+        <p id="formmessage"></p> <!-- Tom paragraf för bekräftelsemeddelande -->
+        <button type="reset" class="resetform" form="visitform">Rensa formuläret</button>
+    </section>
+
+    <section class="visittravel">
+        <h2>Så tar du dig hit</h2>
+        <div class="visittravelcard">
+            <img src="images/visit_travel.png" alt="Lacus Mortis svenska rymdfärja" class="travelimg">
+            <p>Din resa till Lacus Mortis börjar vid vår svenska rymdbas på jorden. Ombord på vår svenskutvecklade
+                rymdfärja, konstruerad med säkerhet och komfort i fokus, lämnar du jordens atmosfär och går in i
+                omloppsbana. Här genomför färjan ett helt varv runt jorden, med en spektakulär utsikt över kontinenter,
+                världshav och vår blå planet.</p>
+
+            <p>Därefter accelererar vi mot månen. Under den cirka 48 timmar långa färden får du uppleva tyngdlöshet och
+                se hur jorden långsamt krymper bakom dig, medan månlandskapet växer fram framför oss.</p>
+
+            <p>Vid ankomsten går färjan in i månens omloppsbana innan den påbörjar sin kontrollerade nedstigning mot
+                Lacus Mortis. Resan avslutas med en mjuk landning vid forskningsanläggningen, där vårt team välkomnar
+                dig.</p>
+
+            <p>Hela färden övervakas av vår erfarna besättning och markkontroll, med din säkerhet som högsta prioritet.
+            </p>
+        </div>
+    </section>
+
+    <section class="visitreq">
+        <h2>HÖGA KRAV</h2>
+        <p>Att resa till Lacus Mortis ställer exceptionellt höga krav på varje deltagare. Rymdens extrema miljö innebär
+            stora fysiska och psykiska påfrestningar, där säkerheten aldrig får kompromissas. Därför krävs omfattande
+            hälsokontroller, psykologiska bedömningar och obligatorisk säkerhetsutbildning med praktiska övningar.</p>
+
+        <p>Varje
+            resenär måste vara förberedd på isolering, stress och oförutsedda situationer.</p>
+
+        <p><span style="color: rgba(212, 175, 100, 0.6);">Inga undantag görs från våra
+                säkerhetskrav.</span></p>
+
+        <p>Att lämna jorden kräver ansvar, disciplin och respekt för rymdens utmaningar.</p>
+        <div class="visitcardsreq">
+            <img src="images/visiticon_physic.webp" alt="Fysiska krav inför besök">
+            <img src="images/visiticon_psyche.webp" alt="Psykologiska krav inför besök">
+            <img src="images/visiticon_education.webp" alt="Utbildningskrav inför besök">
+            <img src="images/visiticon_granted.webp" alt="Godkännande av besök">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Lacus Mortis</p>
+    </footer>
+
+</body>
+
+</html>

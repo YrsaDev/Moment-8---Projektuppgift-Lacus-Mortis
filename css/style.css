@@ -1,0 +1,421 @@
+/* Grundläggande styling */
+body {
+    min-height: 100vh;
+    background-color: #050D16;
+    margin: 0;
+    padding: 0;
+    font-family: 'inter', sans-serif;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Fixerad bakgrund för mobil och desktop.
+   ::before skapar ett separat bakgrundslager.
+   position: fixed håller bakgrunden stilla vid scrollning.
+   100lvh förhindrar att bakgrunden zoomar när
+   mobilens adressfält visas eller döljs.
+*/
+body::before {
+    content: "";
+    /* Skapar ett tomt pseudo-element utan textinnehåll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100lvh;
+    background-image:
+    linear-gradient(
+    rgba(120, 145, 165, 0.15),
+    rgba(120, 145, 165, 0.15)
+    ),
+    url('../images/background_mobile.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    /* Flex-container för att placera ikoner */
+    justify-content: flex-end;
+    /* Lägger ikonen till höger */
+    position: relative;
+    /* Referenspunkt för hamburgermenyn */
+    align-items: center;
+    /* Styr placering vertikalt i flexbox */
+}
+
+.headerlogo {
+    max-width: 250px;
+    height: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    padding-left: 20px;
+}
+
+.headericonlogo {
+    display: none;
+    /* Gör bilden osynlig */
+}
+
+.login-icon {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    /* Justerar ikonen vertikalt med texten */
+    margin-right: 20px;
+}
+
+/* Navigation */
+.menu {
+    z-index: 100;
+    /* Förebygger att något annat hamnar ovanför menyn */
+    display: none;
+    /* Håller menyn dold tills den aktiveras */
+    width: max-content;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background-color: #050D16B3;
+    padding: 12px;
+    line-height: 1.9;
+}
+
+/*Visar meny när klassen open läggs till*/
+.menu.open {
+    display: block;
+}
+
+/* Hamburgerikon */
+.menu-toggle {
+    margin-right: 0.7rem;
+    margin-top: 0.45rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #B8DFFF;
+    font-size: 2rem;
+}
+
+/* Lista och länkar för navigering */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Huvudinnehåll STARTSIDA*/
+.maincoordinates {
+    display: none;
+    /* Gör bilden osynlig */
+}
+
+.mainherologo {
+    display: none;
+    /* Gör bilden osynlig */
+}
+
+.mainlogo {
+    display: block;
+    width: 250px;
+    max-width: 90%;
+    height: auto;
+    margin: 2rem auto 0;
+}
+
+.maintext {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainlinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.basestatus {
+    display: none;
+    /* Gör bilden osynlig */
+}
+
+.mainherolinks {
+    display: none;
+    /* Gör bilderna osynlig */
+}
+
+.herotext {
+    display: none;
+    /* Gör texten osynlig */
+}
+
+/* För responsivitet, så att deras position bevaras och hovereffekt */
+.mainlinks img {
+    width: 99%;
+    height: auto;
+}
+
+.mainlinks a {
+    display: block;
+}
+
+.mainlinks a img {
+    display: block;
+    transition: filter 0.3s ease, transform 0.15s ease;
+}
+
+.mainlinks a:hover img {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 100, 0.8));
+}
+
+.mainlinks a:active img {
+    transform: scale(0.98);
+}
+
+/* Ger hovereffekt med tangentbordsnavigering */
+.mainlinks a:focus-visible {
+    outline: none;
+}
+
+.mainlinks a:focus-visible img {
+    filter: drop-shadow(0 0 12px rgba(212, 175, 100, 0.9));
+}
+
+/* Info area under mainlinks */
+.bottomsection {
+    background-image:
+    linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.45)
+    ),
+    url("../images/main_infoarea.webp");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    min-height: 150px;
+    width: 100%;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.researchlabel {
+    color: #d4af64;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.bottomtext {
+    padding: 1.5rem;
+    color: white;
+    text-align: left;
+}
+
+.bottomtext h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 1rem 0 1.5rem;
+}
+
+.bottomtext p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #08131D;
+    height: 80px;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.footer p {
+    color: #d4af64;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding-top: 1rem;
+
+}
+
+/* Desktop skärmar */
+/* Header navigering */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        /* Tar hela radens bredd */
+        width: auto;
+        position: static;
+        padding: 0;
+        transform: translateY(20px);
+        background-color: transparent;
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .menu li:last-child {
+        margin-left: 160px;
+    }
+
+    .menu a {
+        display: inline-block;
+        /* Länk får egen yta runt sig, tar inte hela raden */
+        border-top: 2px solid transparent;
+        padding-top: 8px;
+    }
+
+    /* Hover guldtak på alla länkar förutom sista */
+    .menu li:not(:last-child) a:hover {
+        border-top-color: #d4af64;
+    }
+
+    body::before {
+        content: "";
+        /* Skapar ett tomt pseudo-element utan textinnehåll */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100lvh;
+        background-image:
+        linear-gradient(
+        rgba(120, 145, 165, 0.15),
+        rgba(120, 145, 165, 0.15)
+        ),
+        url('../images/background_desktop.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 50px;
+    }
+
+    .headerlogo {
+        max-width: none;
+        width: 450px;
+        display: none;
+        /* Gör bilden osynlig */
+    }
+
+    .headericonlogo {
+        display: block;
+        width: 600px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .login-icon {
+        width: 50px;
+        height: auto;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    .maincoordinates {
+        display: block;
+        /* Gör bilden synlig */
+        width: 200px;
+        margin: 7rem 0 -5rem 10rem;
+    }
+
+    .mainlogo {
+        display: none;
+        /* Gör bilden osynlig */
+    }
+
+    .maintext {
+        display: none;
+        /* Gör bilden osynlig */
+    }
+
+    .mainherologo {
+        display: block;
+        /* Gör bilden synlig */
+        width: 1100px;
+        margin: 0 0 2rem 12rem;
+        max-width: 90%;
+height: auto;
+    }
+
+    .basestatus {
+        display: block;
+        margin: auto;
+
+    }
+
+    .herotext {
+        display: block;
+        /* Gör texten synlig */
+        font-size: 1.3rem;
+        text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        box-sizing: border-box;
+        background-color: rgba(5, 13, 22, 0.35);
+        padding: 2rem 15%;
+    }
+
+    .mainlinks {
+        display: none;
+        /* Gör bilderna osynlig */
+    }
+
+    .mainherolinks {
+        display: flex;
+        justify-content: center;
+        /* Styr placering horisontellt i flexbox */
+        margin: 8rem 0 8rem 0;
+        gap: 1rem;
+    }
+
+    .mainherolinks img {
+        width: 600px;
+        height: auto;
+    }
+
+    .bottomtext {
+        max-width: 800px;
+        margin-left: 10rem;
+    }
+}

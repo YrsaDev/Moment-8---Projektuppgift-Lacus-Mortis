@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inspiration&family=Inter:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylesecure.css">
+    <script src="js/main.js" defer></script>
+    <title>Lacus Mortis - Svensk forskning på månen</title>
+</head>
+
+<body>
+    <!-- Sidhuvud och navigering -->
+    <header>
+
+        <img src="images/logotext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headerlogo">
+        <!-- Bild för Mobil -->
+        <img src="images/logoicontext_lacusmortis.webp" alt="Lacus Mortis logotyp" class="headericonlogo">
+        <!-- Bild för Desktop -->
+
+        <button class="menu-toggle">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="base.html">Huvudanläggningen</a></li>
+                <li><a href="systemcompromised.html">Rimae fältstation</a></li>
+                <li><a href="systemcompromised.html">Forskningsområden</a></li>
+                <li><a href="visit.html">Besök oss</a></li>
+                <li><a href="secure.html"><img src="images/icon_login.png" alt="Logga in"
+                            class="login-icon">Säkerhetsklass</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="securitypanel">
+            <div class="securityheader">LACUS MORTIS / SECURITY DIVISION</div>
+            <div id="securitylogin">
+            <img src="images/secure_lock.png" alt="Låsikon för Restricted Area">
+            <h1>BEGRÄNSAD ÅTKOMST</h1>
+            <p>Behörighetskontroll krävs</p>
+            <label>Säkerhetskod</label>
+            <input type="password" id="securitycode" name="securitycode">
+            <button id="verifyBtn">Verifiera behörighet</button>
+            <p id="securitymessage"></p>
+            <button type="button" id="clearSecurity">Rensa säkerhetskod</button>
+            </div>
+
+            <div id="securityinfo" hidden> <!-- Syns endast när rätt säkerhetskod skrivs in -->
+                <h2>BEHÖRIGHET BEKRÄFTAD</h2>
+
+                <p>Säkerhetsnivå: 5</p>
+                <p>Stationens status: OPERATIV</p>
+                <p>Åtkomst: GODKÄND</p>
+
+                <p>Välkommen till Lacus Mortis interna säkerhetssystem.</p>
+                <button type="button" id="lockSecurity">Lås systemet</button>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+</body>
+
+</html>
