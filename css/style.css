@@ -26,11 +26,9 @@ body::before {
     width: 100%;
     height: 100lvh;
     background-image:
-    linear-gradient(
-    rgba(120, 145, 165, 0.15),
-    rgba(120, 145, 165, 0.15)
-    ),
-    url('../images/background_mobile.webp');
+        linear-gradient(rgba(120, 145, 165, 0.15),
+            rgba(120, 145, 165, 0.15)),
+        url('../images/background_mobile.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -205,11 +203,9 @@ h1 {
 /* Info area under mainlinks */
 .bottomsection {
     background-image:
-    linear-gradient(
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.45)
-    ),
-    url("../images/main_infoarea.webp");
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        url("../images/main_infoarea.webp");
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
@@ -287,7 +283,7 @@ h1 {
     }
 
     .menu li:last-child {
-        margin-left: 160px;
+        margin-left: 0;
     }
 
     .menu a {
@@ -311,11 +307,9 @@ h1 {
         width: 100%;
         height: 100lvh;
         background-image:
-        linear-gradient(
-        rgba(120, 145, 165, 0.15),
-        rgba(120, 145, 165, 0.15)
-        ),
-        url('../images/background_desktop.webp');
+            linear-gradient(rgba(120, 145, 165, 0.15),
+                rgba(120, 145, 165, 0.15)),
+            url('../images/background_desktop.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -371,10 +365,10 @@ h1 {
     .mainherologo {
         display: block;
         /* Gör bilden synlig */
-        width: 1100px;
+        width: 60%;
         margin: 0 0 2rem 12rem;
-        max-width: 90%;
-height: auto;
+        max-width: 1100px;
+        height: auto;
     }
 
     .basestatus {
@@ -409,13 +403,54 @@ height: auto;
         gap: 1rem;
     }
 
+    .mainherolinks a {
+        flex: 1;           /* Elementet får växa och krympa för att dela på befintligt utrymme i flexbox */
+        min-width: 0;
+        max-width: 600px;
+    }
+
     .mainherolinks img {
-        width: 600px;
+        /* För responsivitet så ska dessa bilder bli mindre beroende skärmstorlek */
+        width: 100%;
+        max-width: 600px;
         height: auto;
     }
 
     .bottomtext {
         max-width: 800px;
         margin-left: 10rem;
+    }
+}
+
+/* Responsiv navigering för mindre skärmbredder.
+   Mellan 768px och 1399px ersätts den horisontella
+   navigeringen med en hamburgarmeny för att förhindra
+   att menyalternativen radbryts eller överlappar.
+   Övrig desktop-layout behålls. */
+@media (min-width: 768px) and (max-width: 1399px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu.open {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        width: max-content;
+        background-color: #050D16B3;
+        padding: 12px;
+        transform: none;
+    }
+
+    .menu ul {
+        display: block;
     }
 }
