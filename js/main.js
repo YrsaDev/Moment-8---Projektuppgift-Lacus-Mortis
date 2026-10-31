@@ -90,8 +90,7 @@ if (btn) {
       document.body.classList.remove("granted", "denied");
     } else if (input.value === "1111") {
       document.body.classList.remove("denied");
-      document.body.classList.add("granted");
-      msg.textContent = "ACCESS GRANTED";
+      document.body.classList.add("granted");  // aktiverar den gröna bakgrundsbilden när säkerhetskod är rätt
       securityLogin.hidden = true;   // döljer säkerhetskontrollen innan
       securityInfo.hidden = false;   // visar den nya behörighetsinformationen
     } else {
