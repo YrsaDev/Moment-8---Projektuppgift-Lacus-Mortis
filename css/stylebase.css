@@ -110,12 +110,6 @@ body.base::before {
         z-index: -1;
     }
 
-    @media (min-width: 768px) {
-    .stationhud {
-        display: block;
-    }
-}
-
     .stationhud {
         display: block;
         height: auto;
