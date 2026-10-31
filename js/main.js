@@ -76,3 +76,19 @@ if (visitForm) {
 }
 
 // Restricted area
+  const btn = document.getElementById("verifyBtn");   // js hittar forumlär via ID
+  const input = document.getElementById("securitycode");  // hämtar lösenordsfältet med ID securitycode från HTML och sparar det i variabeln input
+  const msg = document.getElementById("securitymessage");   // hämtar elementet från HTML och sparar det i msg så vi kan skriva ut ett svar
+  if (btn) {
+    btn.addEventListener("click", () => {
+      if (input.value === "1111") {
+        document.body.classList.remove("denied");
+        document.body.classList.add("granted");
+        msg.textContent = "ACCESS GRANTED";
+       } else { 
+        document.body.classList.remove("granted");
+        document.body.classList.add("denied");
+        msg.textContent = "ACCESS DENIED";
+}
+});
+}

@@ -94,3 +94,18 @@ body::before {
     margin-bottom: 2rem;
     border-bottom: 1px solid #b89b5e;
 }
+
+#securitycode {
+    color: white;
+    caret-color: white;
+}
+
+/* Rätt säkerhetskod – grön bakgrund */
+body.granted::before {
+    background-image: url("../images/securegreen_mobile.webp");
+}
+
+/* Fel säkerhetskod – röd bakgrund */
+body.denied::before {
+    background-image: url("../images/securered_mobile.webp");
+}
