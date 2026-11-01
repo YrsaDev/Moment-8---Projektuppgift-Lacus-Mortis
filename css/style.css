@@ -11,6 +11,15 @@ body {
     font-weight: 400;
 }
 
+a {
+    color: #6487d4;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #6487d4;
+}
+
 /* Fixerad bakgrund för mobil och desktop.
    ::before skapar ett separat bakgrundslager.
    position: fixed håller bakgrunden stilla vid scrollning.
