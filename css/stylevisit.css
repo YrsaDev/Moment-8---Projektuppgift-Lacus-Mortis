@@ -73,6 +73,46 @@ body.visit::before {
     /* Bildernas höjd anpassas automatiskt när bredden ändras för att bibehålla proportioner */
 }
 
+.contactlayout {
+    display: flex;
+    /* Skapar en flexcontainer för båda elementen*/
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.contactinfo {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2rem;
+    background-color: #08131D;
+    border: 1px solid rgba(212, 175, 100, 0.6);
+}
+
+.contactinfo h1 {
+    font-size: 1.3rem;
+    color: #d4af64;
+}
+
+.contactinfo h2 {
+    font-size: 1rem;
+    color: #d4af64;
+}
+
+.contactrow {
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(212, 175, 100, 0.6);
+    border-bottom: 1px solid rgba(212, 175, 100, 0.6);
+    padding: 5px;
+}
+
+.visitapplication {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
 .visitapplication form {
     display: flex;
     /* Skapar en flexcontainer */
@@ -110,7 +150,8 @@ body.visit::before {
     border-radius: 5px;
     padding: 0.8rem;
     font-family: 'Inter', sans-serif;
-    font-size: 16px ;      /* Förhindrar inzoomning i vissa mobilwebbläsare när man trycker i inmatninsfält*/
+    font-size: 16px;
+    /* Förhindrar inzoomning i vissa mobilwebbläsare när man trycker i inmatninsfält*/
 }
 
 .visitapplication textarea {
@@ -357,9 +398,9 @@ body.visit::before {
 
     .visitapplication {
         align-items: center;
-        width: 100%;
+        width: 70%;
         max-width: 900px;
-        margin: 2rem auto;
+        margin: 0;
         padding-bottom: 2rem;
         background-color: #08131D;
         border-top: 1px solid rgba(212, 175, 100, 0.6);
@@ -460,6 +501,19 @@ body.visit::before {
         border-bottom: 1px solid rgba(212, 175, 100, 0.6);
         width: 80%;
         margin-left: 0.7rem;
+    }
+
+    .contactlayout {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 2rem;
+        width: 80%;
+        max-width: 2000px;
+        margin: 2rem auto;
+    }
+
+    .contactinfo {
+        width: 50%;
     }
 
 
